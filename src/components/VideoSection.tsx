@@ -9,7 +9,7 @@ const VideoSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="relative h-[70vh] overflow-hidden">
+    <section ref={ref} className="relative h-[50vh] sm:h-[70vh] overflow-hidden">
       <img src={videoBg} alt="Tattoo studio" className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-dark-surface/40" />
       
@@ -19,7 +19,7 @@ const VideoSection = () => {
         transition={{ duration: 0.6 }}
         className="absolute inset-0 flex items-center justify-center"
       >
-        <button className="w-24 h-24 rounded-full border-2 border-primary/60 flex items-center justify-center hover:border-primary hover:bg-primary/10 transition-all duration-300 group">
+        <button className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-primary/60 flex items-center justify-center hover:border-primary active:border-primary hover:bg-primary/10 active:bg-primary/10 transition-all duration-300 group">
           <Play className="w-8 h-8 text-primary ml-1 group-hover:scale-110 transition-transform" />
         </button>
       </motion.div>
