@@ -18,19 +18,19 @@ const PortfolioSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="portfolio" ref={ref} className="py-24 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="portfolio" ref={ref} className="py-16 sm:py-24 bg-background">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <span className="text-primary font-body text-sm uppercase tracking-widest">Beautiful designs for clients</span>
-          <h2 className="text-4xl md:text-5xl font-display mt-3 text-foreground">Portfolio</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display mt-3 text-foreground">Portfolio</h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
           {images.map((img, index) => (
             <motion.div
               key={index}
@@ -42,7 +42,7 @@ const PortfolioSection = () => {
               <img
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-72 md:h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-48 sm:h-72 md:h-80 object-cover transition-transform duration-700 group-hover:scale-110"
               />
             </motion.div>
           ))}

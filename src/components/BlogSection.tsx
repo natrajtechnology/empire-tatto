@@ -35,19 +35,19 @@ const BlogSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="blog" ref={ref} className="py-24 bg-dark-surface">
-      <div className="container mx-auto px-6">
+    <section id="blog" ref={ref} className="py-16 sm:py-24 bg-dark-surface">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <span className="text-primary font-body text-sm uppercase tracking-widest">New Updates</span>
-          <h2 className="text-4xl md:text-5xl font-display mt-3 text-dark-surface-foreground">Recent Blog</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display mt-3 text-dark-surface-foreground">Recent Blog</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {posts.map((post, index) => (
             <motion.article
               key={index}
@@ -60,7 +60,7 @@ const BlogSection = () => {
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-48 sm:h-64 object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
               <p className="text-primary font-body text-sm italic mb-2">

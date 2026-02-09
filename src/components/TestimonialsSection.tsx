@@ -27,12 +27,12 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section className="py-24 bg-secondary">
-      <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center relative">
-          <span className="text-8xl text-primary/20 font-display absolute -top-6 left-0">"</span>
+    <section className="py-16 sm:py-24 bg-secondary">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="max-w-3xl mx-auto text-center relative px-6 sm:px-0">
+          <span className="text-6xl sm:text-8xl text-primary/20 font-display absolute -top-4 sm:-top-6 left-0">"</span>
           
-          <h2 className="text-4xl font-display mb-12 text-foreground">Clients Feedback</h2>
+          <h2 className="text-3xl sm:text-4xl font-display mb-8 sm:mb-12 text-foreground">Clients Feedback</h2>
 
           <AnimatePresence mode="wait">
             <motion.div
@@ -42,14 +42,14 @@ const TestimonialsSection = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
             >
-              <p className="text-muted-foreground text-lg leading-relaxed font-body font-light mb-8 italic">
+              <p className="text-muted-foreground text-base sm:text-lg leading-relaxed font-body font-light mb-6 sm:mb-8 italic">
                 {testimonials[current].text}
               </p>
-              <p className="text-primary font-display text-xl">{testimonials[current].name}</p>
+              <p className="text-primary font-display text-lg sm:text-xl">{testimonials[current].name}</p>
             </motion.div>
           </AnimatePresence>
 
-          <span className="text-8xl text-primary/20 font-display absolute -bottom-6 right-0 rotate-180">"</span>
+          <span className="text-6xl sm:text-8xl text-primary/20 font-display absolute -bottom-4 sm:-bottom-6 right-0 rotate-180">"</span>
 
           <div className="flex justify-center gap-2 mt-10">
             {testimonials.map((_, index) => (
