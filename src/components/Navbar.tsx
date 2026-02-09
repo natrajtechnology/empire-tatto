@@ -106,7 +106,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "tween", duration: 0.35 }}
-            className="lg:hidden fixed inset-0 top-0 bg-dark-surface z-50 flex flex-col"
+            className="lg:hidden fixed inset-0 top-0 bg-[hsl(220,20%,8%)] z-50 flex flex-col"
           >
             {/* Close button */}
             <div className="flex justify-between items-center px-4 py-3 sm:px-6 sm:py-4">
