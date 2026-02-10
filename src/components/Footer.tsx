@@ -26,9 +26,9 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg text-dark-surface-foreground mb-4">Contact</h4>
             <ul className="space-y-2 text-dark-surface-muted text-sm font-body">
-              <li>123 Art Street, Studio 4</li>
-              <li>New Delhi, India</li>
-              <li>+91 98765 43210</li>
+              <li>123 Thamel Street, Studio 4</li>
+              <li>Kathmandu, Nepal</li>
+              <li>+977 9812345678</li>
               <li>hello@inkittoos.com</li>
             </ul>
           </div>
