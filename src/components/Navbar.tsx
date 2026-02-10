@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Heart, ShoppingCart, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home", isRoute: false },
+  { label: "Shop", href: "/shop", isRoute: true },
+  { label: "About", href: "/#about", isRoute: false },
+  { label: "Services", href: "/#services", isRoute: false },
+  { label: "Portfolio", href: "/#portfolio", isRoute: false },
+  { label: "Blog", href: "/#blog", isRoute: false },
+  { label: "Contact", href: "/#contact", isRoute: false },
 ];
 
 const Navbar = () => {
@@ -61,20 +63,29 @@ const Navbar = () => {
       </div>
 
       <nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
-        <a href="#home" className="font-display text-xl sm:text-2xl italic text-dark-surface-foreground tracking-wide">
+        <Link to="/" className="font-display text-xl sm:text-2xl italic text-dark-surface-foreground tracking-wide">
           inkittoos
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <ul className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navLinks.map((link) => (
             <li key={link.label}>
-              <a
-                href={link.href}
-                className="text-dark-surface-foreground/80 hover:text-primary transition-colors text-sm font-body tracking-wider uppercase"
-              >
-                {link.label}
-              </a>
+              {link.isRoute ? (
+                <Link
+                  to={link.href}
+                  className="text-dark-surface-foreground/80 hover:text-primary transition-colors text-sm font-body tracking-wider uppercase"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  href={link.href}
+                  className="text-dark-surface-foreground/80 hover:text-primary transition-colors text-sm font-body tracking-wider uppercase"
+                >
+                  {link.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -129,13 +140,23 @@ const Navbar = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + i * 0.06 }}
                 >
-                  <a
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="text-dark-surface-foreground text-2xl font-display hover:text-primary active:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  {link.isRoute ? (
+                    <Link
+                      to={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="text-dark-surface-foreground text-2xl font-display hover:text-primary active:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="text-dark-surface-foreground text-2xl font-display hover:text-primary active:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </motion.li>
               ))}
             </ul>
