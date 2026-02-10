@@ -64,7 +64,7 @@ const Navbar = () => {
 
       <nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         <Link to="/" className="font-display text-xl sm:text-2xl italic text-dark-surface-foreground tracking-wide">
-          inkittoos
+          Empire Tatto
         </Link>
 
         {/* Desktop Nav */}

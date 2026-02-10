@@ -6,9 +6,9 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-12">
           <div>
-            <h3 className="font-display text-2xl italic text-dark-surface-foreground mb-4">inkittoos</h3>
+            <h3 className="font-display text-2xl italic text-dark-surface-foreground mb-4">Empire Tatto</h3>
             <p className="text-dark-surface-muted font-body font-light text-sm leading-relaxed">
-              Premium tattoo studio crafting beautiful art since 2010. Every piece tells a unique story.
+              Professional tattoo supplies and equipment for artists. Quality products since 2010.
             </p>
           </div>
           <div>
@@ -29,7 +29,7 @@ const Footer = () => {
               <li>123 Thamel Street, Studio 4</li>
               <li>Kathmandu, Nepal</li>
               <li>+977 9812345678</li>
-              <li>hello@inkittoos.com</li>
+              <li>hello@empiretatto.com</li>
             </ul>
           </div>
           <div>
@@ -46,7 +46,7 @@ const Footer = () => {
 
         <div className="border-t border-border/10 pt-8 text-center">
           <p className="text-dark-surface-muted text-sm font-body font-light flex items-center justify-center gap-1">
-            Made with <Heart size={14} className="text-primary" /> © 2025 inkittoos. All rights reserved.
+            Made with <Heart size={14} className="text-primary" /> © 2025 Empire Tatto Suppliers. All rights reserved.
           </p>
         </div>
       </div>
