@@ -32,7 +32,19 @@ export default defineConfig(({ mode }) => ({
     mode === "development" && componentTagger()
   ].filter(Boolean),
   resolve: {
-    al  // Optimize chunk file names
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'framer-motion': ['framer-motion'],
+          'ui-components': ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
+        },
+        // Optimize chunk file names
         chunkFileNames: 'assets/[name]-[hash].js',
         entryFileNames: 'assets/[name]-[hash].js',
         assetFileNames: 'assets/[name]-[hash].[ext]',
@@ -57,18 +69,6 @@ export default defineConfig(({ mode }) => ({
     // Optimize chunk sizes
     chunkSizeWarningLimit: 500,
     // Enable source maps only in dev
-    sourcemap: mode === 'development'on': ['framer-motion'],
-          'ui-components': ['@radix-ui/react-accordion', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
-        },
-      },
-    },
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
-    cssCodeSplit: true,
+    sourcemap: mode === 'development',
   },
 }));
