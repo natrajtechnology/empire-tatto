@@ -19,7 +19,7 @@ const VideoSection = () => {
         transition={{ duration: 0.6 }}
         className="absolute inset-0 flex items-center justify-center"
       >
-        <button className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-primary/60 flex items-center justify-center hover:border-primary active:border-primary hover:bg-primary/10 active:bg-primary/10 transition-all duration-300 group">
+        <button className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-primary/60 flex items-center justify-center hover:border-primary active:border-primary hover:bg-primary/10 active:bg-primary/10 transition-all duration-300 group" aria-label="Play video">
           <Play className="w-8 h-8 text-primary ml-1 group-hover:scale-110 transition-transform" />
         </button>
       </motion.div>

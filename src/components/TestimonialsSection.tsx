@@ -42,24 +42,29 @@ const TestimonialsSection = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
             >
-              <p className="text-muted-foreground text-base sm:text-lg leading-relaxed font-body font-light mb-6 sm:mb-8 italic">
+              <p className="text-foreground/90 text-base sm:text-lg leading-relaxed font-body font-light mb-6 sm:mb-8 italic">
                 {testimonials[current].text}
               </p>
-              <p className="text-primary font-display text-lg sm:text-xl">{testimonials[current].name}</p>
+              <p className="text-foreground font-display text-lg sm:text-xl font-semibold">{testimonials[current].name}</p>
             </motion.div>
           </AnimatePresence>
 
           <span className="text-6xl sm:text-8xl text-primary/20 font-display absolute -bottom-4 sm:-bottom-6 right-0 rotate-180">"</span>
 
-          <div className="flex justify-center gap-2 mt-10">
+          <div className="flex justify-center gap-3 mt-10">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrent(index)}
-                className={`w-3 h-3 rounded-sm transition-all duration-300 ${
-                  index === current ? "bg-primary w-6" : "bg-muted-foreground/30"
+                aria-label={`View testimonial ${index + 1}`}
+                className={`w-10 h-10 rounded-full transition-all duration-300 flex items-center justify-center ${
+                  index === current ? "bg-primary" : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                 }`}
-              />
+              >
+                <span className={`w-2 h-2 rounded-full ${
+                  index === current ? "bg-primary-foreground" : "bg-foreground/40"
+                }`} />
+              </button>
             ))}
           </div>
         </div>

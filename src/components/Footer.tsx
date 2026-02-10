@@ -35,8 +35,8 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg text-dark-surface-foreground mb-4">Follow Us</h4>
             <div className="flex gap-4">
-              {[Instagram, Facebook, Twitter].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 border border-dark-surface-muted/30 rounded-full flex items-center justify-center text-dark-surface-muted hover:text-primary hover:border-primary transition-colors">
+              {[{ Icon: Instagram, label: "Instagram" }, { Icon: Facebook, label: "Facebook" }, { Icon: Twitter, label: "Twitter" }].map(({ Icon, label }, i) => (
+                <a key={i} href="#" className="w-10 h-10 border border-dark-surface-muted/30 rounded-full flex items-center justify-center text-dark-surface-muted hover:text-primary hover:border-primary transition-colors" aria-label={label}>
                   <Icon size={18} />
                 </a>
               ))}

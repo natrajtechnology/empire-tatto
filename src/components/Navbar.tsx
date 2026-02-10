@@ -91,9 +91,9 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-3 sm:gap-4 text-dark-surface-foreground/80">
-          <button className="hover:text-primary transition-colors p-1.5"><Heart size={20} /></button>
-          <button className="hidden sm:block hover:text-primary transition-colors p-1.5"><Search size={20} /></button>
-          <button className="hover:text-primary transition-colors relative p-1.5">
+          <button className="hover:text-primary transition-colors p-1.5" aria-label="Wishlist"><Heart size={20} /></button>
+          <button className="hidden sm:block hover:text-primary transition-colors p-1.5" aria-label="Search"><Search size={20} /></button>
+          <button className="hover:text-primary transition-colors relative p-1.5" aria-label="Shopping cart">
             <ShoppingCart size={20} />
             <span className="absolute top-0 right-0 bg-primary text-primary-foreground text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
           </button>
