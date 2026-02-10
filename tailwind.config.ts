@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Playfair Display", "serif"],
-        body: ["Lato", "sans-serif"],
+        display: ["Playfair Display", "Georgia", "Cambria", "Times New Roman", "serif"],
+        body: ["Lato", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
