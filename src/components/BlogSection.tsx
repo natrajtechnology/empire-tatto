@@ -60,6 +60,7 @@ const BlogSection = () => {
                 <img
                   src={post.image}
                   alt={post.title}
+                  loading="lazy"
                   className="w-full h-48 sm:h-64 object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>

@@ -1,12 +1,15 @@
+import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import ServicesSection from "@/components/ServicesSection";
-import PortfolioSection from "@/components/PortfolioSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import VideoSection from "@/components/VideoSection";
-import BlogSection from "@/components/BlogSection";
-import Footer from "@/components/Footer";
+
+// Lazy load components below the fold
+const ServicesSection = lazy(() => import("@/components/ServicesSection"));
+const PortfolioSection = lazy(() => import("@/components/PortfolioSection"));
+const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
+const VideoSection = lazy(() => import("@/components/VideoSection"));
+const BlogSection = lazy(() => import("@/components/BlogSection"));
+const Footer = lazy(() => import("@/components/Footer"));
 
 const Index = () => {
   return (
@@ -14,12 +17,14 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <AboutSection />
-      <ServicesSection />
-      <PortfolioSection />
-      <TestimonialsSection />
-      <VideoSection />
-      <BlogSection />
-      <Footer />
+      <Suspense fallback={<div className="min-h-screen" />}>
+        <ServicesSection />
+        <PortfolioSection />
+        <TestimonialsSection />
+        <VideoSection />
+        <BlogSection />
+        <Footer />
+      </Suspense>
     </div>
   );
 };

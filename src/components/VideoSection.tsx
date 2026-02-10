@@ -10,7 +10,7 @@ const VideoSection = () => {
 
   return (
     <section ref={ref} className="relative h-[50vh] sm:h-[70vh] overflow-hidden">
-      <img src={videoBg} alt="Tattoo studio" className="w-full h-full object-cover" />
+      <img src={videoBg} alt="Tattoo studio" loading="lazy" className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-dark-surface/40" />
       
       <motion.div

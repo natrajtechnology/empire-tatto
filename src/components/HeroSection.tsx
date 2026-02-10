@@ -6,7 +6,12 @@ const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-[100svh] flex items-center overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroBg} alt="Tattoo artist" className="w-full h-full object-cover object-center sm:object-right" />
+        <img 
+          src={heroBg} 
+          alt="Tattoo artist" 
+          fetchpriority="high"
+          className="w-full h-full object-cover object-center sm:object-right" 
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-dark-surface/90 via-dark-surface/60 to-dark-surface/20 sm:from-dark-surface/80 sm:via-dark-surface/50 sm:to-transparent" />
       </div>
 

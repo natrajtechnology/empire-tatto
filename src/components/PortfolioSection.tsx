@@ -42,6 +42,7 @@ const PortfolioSection = () => {
               <img
                 src={img.src}
                 alt={img.alt}
+                loading="lazy"
                 className="w-full h-48 sm:h-72 md:h-80 object-cover transition-transform duration-700 group-hover:scale-110"
               />
             </motion.div>

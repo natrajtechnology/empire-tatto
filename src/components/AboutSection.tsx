@@ -23,11 +23,13 @@ const AboutSection = () => {
             <img
               src={about1}
               alt="Tattoo process"
+              loading="lazy"
               className="w-52 sm:w-72 h-72 sm:h-96 object-cover rounded-sm shadow-2xl"
             />
             <img
               src={about2}
               alt="Tattoo artwork"
+              loading="lazy"
               className="w-40 sm:w-56 h-52 sm:h-72 object-cover rounded-sm shadow-2xl absolute top-24 sm:top-32 left-32 sm:left-48 border-4 border-background"
             />
           </motion.div>
